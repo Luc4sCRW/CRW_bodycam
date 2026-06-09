@@ -4,6 +4,6 @@
     stack = false,
     close = true,
     server = {
-        export = 'cbodycam.useBodycam'
+        export = 'CRW_bodycam.useBodycam'
     }
 },
