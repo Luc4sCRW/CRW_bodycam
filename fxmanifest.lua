@@ -17,6 +17,11 @@ server_scripts {
     'server.lua'
 }
 
+shared_scripts {
+    'locales.lua',
+    'locales/*.lua'
+}
+
 ui_page 'html/index.html'
 
 files {
