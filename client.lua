@@ -1,6 +1,7 @@
 local ESX = exports['es_extended']:getSharedObject()
 local isCamActive = false
 local currentName = ""
+local _U = i18n
 
 -- Zeit // time
 local function GetCurrentTimestamp()
@@ -34,7 +35,7 @@ AddEventHandler('CRW_bodycam:toggle', function(charName)
     -- Animation & Progressbar von ox_lib
     local success = lib.progressBar({
         duration = 2000,
-        label = isCamActive and 'Bodycam wird deaktiviert...' or 'Bodycam wird angelegt...',
+        label = isCamActive and _U('dialog_deactivated') or _U('dialog_activated'),
         useWhileDead = false,
         canCancel = true,
         disable = { move = false, car = false, combat = true },
