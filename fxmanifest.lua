@@ -1,15 +1,10 @@
 fx_version 'cerulean'
 game 'gta5'
 
+author 'Luc4s_CRW'
+description 'Simple Bodycam | CRW_bodycam'
+version '1.0.0'
 lua54 'yes'
-
-ui_page 'html/index.html'
-
-files {
-    'html/index.html',
-    'html/style.css',
-    'html/script.js'
-}
 
 client_scripts {
     '@ox_lib/init.lua',
@@ -20,6 +15,14 @@ client_scripts {
 server_scripts {
     'config.lua',
     'server.lua'
+}
+
+ui_page 'html/index.html'
+
+files {
+    'html/index.html',
+    'html/style.css',
+    'html/script.js'
 }
 
 server_export 'useBodycam'
