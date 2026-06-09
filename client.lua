@@ -72,7 +72,7 @@ CreateThread(function()
             
             -- Alle 5 Sek Item-Check
             if GetGameTimer() % 5000 < 1000 then
-                ESX.TriggerServerCallback('cbodycam:checkItem', function(hasItem)
+                ESX.TriggerServerCallback('CRW_bodycam:checkItem', function(hasItem)
                     if not hasItem then
                         isCamActive = false
                         SendNUIMessage({ action = "close" })
