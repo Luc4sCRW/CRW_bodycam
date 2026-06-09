@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    user-select: none;
+}
+
+.axon-overlay {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
+    letter-spacing: 1px;
+}
+
+.info-text {
+    text-align: right;
+    margin-right: 15px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+#cam-title {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#player-name {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+#date-time {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+#cam-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0px 0px 2px black);
+}
