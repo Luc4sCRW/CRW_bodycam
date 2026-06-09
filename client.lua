@@ -2,37 +2,33 @@ local ESX = exports['es_extended']:getSharedObject()
 local isCamActive = false
 local currentName = ""
 
--- Zeitfunktion (Sicherer Ersatz für os.date)
+-- Zeit // time
 local function GetCurrentTimestamp()
     local year, month, day, hour, minute, second = GetLocalTime()
     local dateString = ""
     local timeString = ""
 
-    -- Zeit bauen
     if Config.IncludeSeconds then
         timeString = string.format("%02d:%02d:%02d", hour, minute, second)
     else
         timeString = string.format("%02d:%02d", hour, minute)
     end
-    -- Datum je nach Config
+
     if Config.DateFormat == "US" then
-        -- MM/DD/YYYY
         dateString = string.format("%02d/%02d/%04d", month, day, year)
     elseif Config.DateFormat == "EU" then
-        -- DD.MM.YYYY
         dateString = string.format("%02d.%02d.%04d", day, month, year)
     elseif Config.DateFormat == "ISO" then
-        -- YYYY-MM-DD (nice für Logs)
         dateString = string.format("%04d-%02d-%02d", year, month, day)
     else
-        -- Fallback (EU)
+        -- Fallback
         dateString = string.format("%02d.%02d.%04d", day, month, year)
     end
     return dateString .. " " .. timeString
 end
 
-RegisterNetEvent('cbodycam:toggle')
-AddEventHandler('cbodycam:toggle', function(charName)
+RegisterNetEvent('CRW_bodycam:toggle')
+AddEventHandler('CRW_bodycam:toggle', function(charName)
     currentName = charName
     
     -- Animation & Progressbar von ox_lib
@@ -47,11 +43,9 @@ AddEventHandler('cbodycam:toggle', function(charName)
 
     if success then 
         isCamActive = not isCamActive
-        
-        if isCamActive then
-            -- Sound (Axon Style Beep)
-            PlaySoundFrontend(-1, "On_Call_Player_Join", "DLC_HEISTS_GENERAL_FRONTEND_SOUNDS", 1)
             
+        if isCamActive then
+            PlaySoundFrontend(-1, "On_Call_Player_Join", "DLC_HEISTS_GENERAL_FRONTEND_SOUNDS", 1)
             SendNUIMessage({
                 action = "open",
                 title = Config.BodycamTitle,
@@ -76,7 +70,7 @@ CreateThread(function()
                 time = GetCurrentTimestamp() 
             })
             
-            -- Alle 5 Sekunden Item-Check
+            -- Alle 5 Sek Item-Check
             if GetGameTimer() % 5000 < 1000 then
                 ESX.TriggerServerCallback('cbodycam:checkItem', function(hasItem)
                     if not hasItem then
