@@ -10,11 +10,7 @@ exports('useBodycam', function(event, item, inventory, slot, data)
         -- Job Prüfung
         if Config.AllowedJobs[xPlayer.job.name] then
             local name = xPlayer.getName()
-            -- Wir triggern den Client-Event
-            TriggerClientEvent('cbodycam:toggle', source, name)
-            
-            -- WICHTIG: Wir geben false zurück, damit das Item NICHT entfernt wird.
-            -- Aber wir haben den Event bereits getriggert.
+            TriggerClientEvent('CRW_bodycam:toggle', source, name)
             return false 
         else
             TriggerClientEvent('ox_lib:notify', source, {
@@ -27,7 +23,7 @@ exports('useBodycam', function(event, item, inventory, slot, data)
 end)
 
 -- Callback für den Item-Check
-ESX.RegisterServerCallback('cbodycam:checkItem', function(source, cb)
+ESX.RegisterServerCallback('CRW_bodycam:checkItem', function(source, cb)
     local xPlayer = ESX.GetPlayerFromId(source)
     if not xPlayer then return cb(false) end
     
