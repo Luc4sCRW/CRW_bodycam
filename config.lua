@@ -5,7 +5,6 @@ Config.BodycamTitle = "COIL BODYCAM"
 Config.DateFormat = "ISO" -- EU (DD.MM.YYYY), US (MM/DD/YYYY), ISO (YYYY-MM-DD)
 Config.IncludeSeconds = true -- true/false
 
--- Erlaubte Jobs
 Config.AllowedJobs = {
     ["police"] = true,
     ["ambulance"] = true,
