@@ -32,7 +32,7 @@ RegisterNetEvent('CRW_bodycam:toggle')
 AddEventHandler('CRW_bodycam:toggle', function(charName)
     currentName = charName
     
-    -- Animation & Progressbar von ox_lib
+    -- Animation and ox_lib
     local success = lib.progressBar({
         duration = 2000,
         label = isCamActive and _U('dialog_deactivated') or _U('dialog_activated'),
@@ -60,18 +60,16 @@ AddEventHandler('CRW_bodycam:toggle', function(charName)
     end
 end)
 
--- Haupt-Loop
 CreateThread(function()
     while true do
         local sleep = 1000
         if isCamActive then
-            -- Zeit an NUI
             SendNUIMessage({ 
                 action = "updateTime", 
                 time = GetCurrentTimestamp() 
             })
             
-            -- Alle 5 Sek Item-Check
+            -- Alle 5 Sekunden das Item überprüfen (ob es noch im Inventar existiert) // Check the item every 5 seconds (to see if it's still in the inventory)
             if GetGameTimer() % 5000 < 1000 then
                 ESX.TriggerServerCallback('CRW_bodycam:checkItem', function(hasItem)
                     if not hasItem then
