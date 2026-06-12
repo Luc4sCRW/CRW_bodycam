@@ -66,7 +66,7 @@ The bodycam displays the **character name**, the **date**, and the **time**, and
 ---
 
 # PREVIEW
-https://streamable.com/bgmqrj
+
 
 ---
 
