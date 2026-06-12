@@ -1,9 +1,9 @@
 Config = {}
 
-Config.Locale = "de" -- 'de', 'en', 'es', 'fr'
+Config.Locale = "en" -- 'de', 'en', 'es', 'fr'
 Config.ItemName = "bodycam" -- ox_inventory Item
 Config.BodycamTitle = "COIL BODYCAM"
-Config.DateFormat = "EU" -- EU (DD.MM.YYYY), US (MM/DD/YYYY), ISO (YYYY-MM-DD)
+Config.DateFormat = "ISO" -- EU (DD.MM.YYYY), US (MM/DD/YYYY), ISO (YYYY-MM-DD)
 Config.IncludeSeconds = true
 
 Config.AllowedJobs = {
