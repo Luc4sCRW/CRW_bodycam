@@ -1,9 +1,9 @@
 Config = {}
 
-Config.Locale = "en" -- 'de', 'en', 'es', 'fr'
+Config.Locale = "de" -- 'de', 'en', 'es', 'fr'
 Config.ItemName = "bodycam" -- ox_inventory Item
 Config.BodycamTitle = "COIL BODYCAM"
-Config.DateFormat = "ISO" -- EU (DD.MM.YYYY), US (MM/DD/YYYY), ISO (YYYY-MM-DD)
+Config.DateFormat = "EU" -- EU (DD.MM.YYYY), US (MM/DD/YYYY), ISO (YYYY-MM-DD)
 Config.IncludeSeconds = true
 
 Config.AllowedJobs = {
@@ -13,4 +13,4 @@ Config.AllowedJobs = {
     ["noose"] = true,
 }
 
-Config.LogoPath = "https://static.wikia.nocookie.net/gtawiki/images/3/3f/Coil-GTAO-Logo.png" -- if you want to use a picture local, then html/YOUR-IMAGE.png
+Config.LogoPath = "COIL.png" -- If you want to use another Image, then html/YOUR-LOGO.png

@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'Luc4s_CRW'
-description 'Simple Bodycam | CRW_bodycam'
+description 'Simple Bodycam Overlay | CRW_bodycam'
 version '1.0.0'
 lua54 'yes'
 
@@ -27,7 +27,8 @@ ui_page 'html/index.html'
 files {
     'html/index.html',
     'html/style.css',
-    'html/script.js'
+    'html/script.js',
+    'html/*.png'
 }
 
 server_export 'useBodycam'
