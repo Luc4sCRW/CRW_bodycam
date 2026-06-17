@@ -28,8 +28,7 @@ local function GetCurrentTimestamp()
     return dateString .. " " .. timeString
 end
 
-RegisterNetEvent('CRW_bodycam:toggle')
-AddEventHandler('CRW_bodycam:toggle', function(charName)
+RegisterNetEvent('CRW_bodycam:toggle', function(charName)
     currentName = charName
     
     -- Animation and ox_lib
@@ -42,7 +41,7 @@ AddEventHandler('CRW_bodycam:toggle', function(charName)
         anim = { dict = 'clothingtie', clip = 'try_tie_neutral_a' }
     })
 
-    if success then 
+    if success then
         isCamActive = not isCamActive
             
         if isCamActive then
@@ -61,16 +60,23 @@ AddEventHandler('CRW_bodycam:toggle', function(charName)
 end)
 
 CreateThread(function()
+    local lastTime = ""
+    local lastCheck = 0
+        
     while true do
-        local sleep = 1000
         if isCamActive then
-            SendNUIMessage({ 
-                action = "updateTime", 
-                time = GetCurrentTimestamp() 
-            })
-            
+            local time = GetCurrentTimestamp()
+            if time ~= lastTime then
+                lastTime = time
+                SendNUIMessage({
+                    action = "updateTime",
+                    time = time
+                })
+            end
+                
             -- Alle 5 Sekunden das Item überprüfen (ob es noch im Inventar existiert) // Check the item every 5 seconds (to see if it's still in the inventory)
-            if GetGameTimer() % 5000 < 1000 then
+            if GetGameTimer() - lastCheck >= 5000 then
+                lastCheck = GetGameTimer()
                 ESX.TriggerServerCallback('CRW_bodycam:checkItem', function(hasItem)
                     if not hasItem then
                         isCamActive = false
@@ -79,9 +85,9 @@ CreateThread(function()
                     end
                 end)
             end
+            Wait(500)
         else
-            sleep = 2000
+            Wait(2000)
         end
-        Wait(sleep)
     end
 end)
