@@ -66,12 +66,11 @@ The bodycam displays the **character name**, the **date**, and the **time**, and
 ---
 
 # PREVIEW
-
+https://streamable.com/csf2w7
 
 ---
 
 # UPDATES
-
 Updates for scripts are always announced on the Discord server. So feel free to join the Discord server to stay up to date.
 
 
