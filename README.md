@@ -60,6 +60,7 @@ The bodycam displays the **character name**, the **date**, and the **time**, and
 ---
 
 # DEPENDENCY
+- ESX
 - ox_inventory (https://github.com/overextended/ox_inventory/releases)
 - ox_lib (https://github.com/overextended/ox_lib/releases)
 
