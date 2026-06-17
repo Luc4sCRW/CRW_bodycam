@@ -14,11 +14,11 @@ Die Bodycam zeigt den **Charakternamen**, das **Datum**, die **Uhrzeit** und kan
 
 # 🔧 Features
 
-- Realistische Bodycam UI
+- Bodycam UI
 - Anzeige von Name + Datum + Uhrzeit
 - Mehrere Datumsformate (EU / US / ISO)
 - Item (ox_inventory kompatibel)
-- Automatische Deaktivierung wenn Item im Inventar fehlt
+- Automatische Deaktivierung wenn Bodycam im Inventar fehlt
 - ox_lib Progressbar
 
 ---
@@ -40,11 +40,11 @@ The bodycam displays the **character name**, the **date**, and the **time**, and
 
 # 🔧 Features
 
-- Realistic bodycam UI
+- bodycam UI
 - Displays name + date + time
 - Multiple date formats (EU / US / ISO)
 - Item (ox_inventory compatible)
-- Automatic deactivation if item is missing from inventory
+- Automatic deactivation if bodycam is missing from inventory
 - ox_lib progress bar
 
 ---
