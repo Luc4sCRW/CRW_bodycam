@@ -30,5 +30,3 @@ files {
     'html/script.js',
     'html/*.png'
 }
-
-server_export 'useBodycam'
